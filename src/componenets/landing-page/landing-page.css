@@ -1,0 +1,83 @@
+/* body {
+    padding-top: 50px;
+  } */
+
+/* Style the buttons container */
+.buttons-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+    text-align: center;
+  }
+
+/* Style the buttons */
+.button {
+    font-size: 24px;
+    padding: 16px 32px;
+    margin: 16px; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none; 
+ 
+  }
+  
+  /* Style the primary button */
+  .button-report-sightings {
+    background-color: #119F63;
+    color: #fff;
+    border: 2px solid #7F993A;
+  }
+  
+  /* Style the secondary button */
+  .button-informational {
+    background-color: #0D6E45;
+    color: #fff;
+    border: 2px solid #7F993A;
+  }
+  
+  /* Style the tertiary button */
+  .button-map {
+    background-color: #053320;
+    color: #fff;
+    border: 2px solid #7F993A;
+  }
+  
+  /* Hover effect */
+  .button:hover {
+    background-color: #fff;
+    color: #053320;
+  }
+  
+  /* Click effect */
+  .button:active {
+    background-color: #7F993A;
+    color: #fff;
+    transform: scale(0.95);
+  }
+
+
+ /* Style the video background */
+.video-bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Style the video element */
+  .video-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
