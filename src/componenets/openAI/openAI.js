@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 
 const ChatWindow = ({ apiKey, model }) => {
-  apiKey = "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";
+  apiKey = "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";
   model = "text-davinci-003";
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const [conversation, setConversation] = useState([]);
 
   const configuration = new Configuration({ apiKey });
   const openai = new OpenAIApi(configuration);
@@ -18,11 +19,20 @@ const ChatWindow = ({ apiKey, model }) => {
       ...prevMessages,
       { text: input, sender: "user" },
     ]);
+    // const response = await openai.createChatCompletion({
+    //   model: "gpt-3.5-turbo",
+    //   messages: [{ role: "user", content: input }],
+    // });
+    let city = "San Francisco, CA";
+    let plantName = "Pueraria montana";
     const response = await openai.createCompletion({
-      model,
-      prompt: input,
-      max_tokens: 50,
-      temperature: 0.7,
+      model: "text-davinci-003",
+      prompt: `What is the history of ${plantName} in ${city} and is it considered invasive? \n\n Do I need to report if I see it in ${city}? is there an email address for that?`,
+      temperature: 0,
+      max_tokens: 1006,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0,
     });
     console.log("response", response);
     setMessages((prevMessages) => [
@@ -50,11 +60,12 @@ const ChatWindow = ({ apiKey, model }) => {
         ))}
       </div>
       <div>
-        <input
-          type="text"
+        <textarea
+          style={{ width: "100%", height: "100px" }} // adjust the size as needed
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
+        <br />
         <button onClick={handleInput}>Send</button>
       </div>
     </div>

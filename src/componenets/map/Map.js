@@ -8,9 +8,9 @@ export default function Map() {
   return (
     // <video autoPlay muted loop className="video" src={video4} />
     <div>
-      <MapComponent />
+      <ChatWindow />
     </div>
-    // <ChatWindow />
+    // <MapComponent />
     // <div className="video-bg">
     //   <div className="container">
     //     <video autoPlay muted loop className="video" src={egretVideoUrl} />
