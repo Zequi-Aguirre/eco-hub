@@ -3,7 +3,7 @@ import { Configuration, OpenAIApi } from "openai";
 
 const ChatWindow = ({ apiKey, model }) => {
   // get the api key from the environment variable
-  apiKey = process.env.local.openAIKEY;
+  apiKey = "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";
   model = "text-davinci-003";
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
@@ -23,8 +23,8 @@ const ChatWindow = ({ apiKey, model }) => {
     //   model: "gpt-3.5-turbo",
     //   messages: [{ role: "user", content: input }],
     // });
-    let city = "kat key bahamas";
-    let plantName = "iguanas";
+    let city = "Miami, FL";
+    let plantName = "Pueraria montana";
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `What is the history of ${plantName} in ${city} and is it considered invasive? \n\n Do I need to report if I see it in ${city}? is there an email address for that?`,

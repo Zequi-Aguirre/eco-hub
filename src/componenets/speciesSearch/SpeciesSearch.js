@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function SpeciesSearch() {
@@ -32,6 +33,7 @@ function SpeciesSearch() {
         let record = {
           id: species.record.id,
           name: species.record.name,
+          wikipediaLink: species.record.wikipedia_url,
           taxon_photos: species.record.default_photo
             ? species.record.default_photo.medium_url
             : "",
@@ -63,10 +65,12 @@ function SpeciesSearch() {
         <button type="submit">Search</button>
       </form>
       {result.map((species) => (
-        <div key={species.record.id}>
-          <h3>{species.record.name}</h3>
-          <img src={species.record.taxon_photos} alt={species.record.name} />
-        </div>
+        <Link target="_blank" to={species.record.wikipediaLink}>
+          <div key={species.record.id}>
+            <h3>{species.record.name}</h3>
+            <img src={species.record.taxon_photos} alt={species.record.name} />
+          </div>
+        </Link>
       ))}
     </div>
   );

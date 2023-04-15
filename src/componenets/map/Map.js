@@ -1,6 +1,7 @@
 import React from "react";
 import MapComponent from "./MapComponent";
 import ChatWindow from "../openAI/openAI";
+import SpeciesSearch from "../speciesSearch/SpeciesSearch";
 
 export default function Map() {
   const egretVideoUrl =
@@ -9,6 +10,7 @@ export default function Map() {
     // <video autoPlay muted loop className="video" src={video4} />
     <div>
       <ChatWindow />
+      <SpeciesSearch />
     </div>
     // <MapComponent />
     // <div className="video-bg">
