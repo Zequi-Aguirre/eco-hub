@@ -42,21 +42,20 @@ export default function LandingPage() {
     <div className="video-bg">
     <div class="band"><h3 className="band-text">Click on a Species to learn more</h3></div>
       <video autoPlay muted loop className="video" src={video1}/>
-
-      <div id="button-container" className="buttons-container">
-        <Link to="/report-sightings" id = "button button-report-sightings">
+      
+      <div class="info-container">
+      <Link to="/report-sightings" id = "button button-report-sightings">
           <button className="button button-report-sightings">Report Sightings</button>
         </Link>
-        <br></br>
         <Link to="/informational" id = "button button-informational">
           <button className="button button-informational">Informational</button>
         </Link>
-        <br></br>
         <Link to="/map" id = "button button-map">
         <button className="button button-map">Map</button>
         </Link>
       </div>
-    </div>
+
+      </div>
   )
 }
 
