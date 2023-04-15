@@ -3,7 +3,7 @@ import { Configuration, OpenAIApi } from "openai";
 
 const ChatWindow = ({ apiKey, model }) => {
   // get the api key from the environment variable
-  apiKey = process.env.openAIKEY;
+  apiKey = process.env.local.openAIKEY;
   model = "text-davinci-003";
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
